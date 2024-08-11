@@ -1,0 +1,32 @@
+PART 1: Create the database
+
+- Create database: worldcup
+- Connect to worldcup
+- Create table: teams
+  - Add column team_id serial primary key not null
+  - Add column name varchar unique not null
+- Create table: games
+  - Add column game_id serial primary key not null
+  - Add column year int not null
+  - Add column round varchar not null
+  - Add column winner_id int not null
+    - Add foreign key winner_id references teams(team_id)
+  - Add column opponent_id int not null
+    - Add foreign key opponent_id references teams(team_id)
+  - Add column winner_goals int not null
+  - Add column opponent_goals int not null
+
+PART 2: Insert data
+
+- Add executable permissions to insert_data.sh
+- Add unique teams to teams table (24)
+- Add a row for each line in games.csv to games table (32)
+  - Need to parse the various columns
+  - Add correct team id's (need to add teams first and do a query to get the right id)
+
+PART 3: Query database
+
+- Add executable permissions to queries.sh
+- Complete queries.sh to return the relevant data
+- Needs to match expected_output.txt **exactly**
+  - Be wary of decimal places!
